@@ -13,5 +13,6 @@ module.exports = {
         .setFooter(`!e621 is furry\n
         !r34 and !xb is rule34\n
         !realb is real life`)
+        message.channel.send(embed)
 	},
 };
