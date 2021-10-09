@@ -5,7 +5,10 @@ module.exports = {
     execute(client, message, args){
         if (!message.guild) return;
         if (message.channel.nsfw === false) return message.channel.send('wee wee woo woo this aint a poo poo channel')
-        const sb = Booru.forSite('sb')
-        sb.search(['ball'], { limit: 2 })
+        Booru.search('safebooru', ['glaceon'], { limit: 3, random: true })
+  .then(posts => {
+    for (let post of posts)
+      console.log(post.fileUrl, post.postView)
+  })
     }
 }
