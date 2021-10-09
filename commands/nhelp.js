@@ -1,7 +1,7 @@
 const Booru = require('booru')
 const { MessageEmbed, MessageFlags } = require("discord.js")
 module.exports = {
-	name: 'xb',
+	name: 'nhelp',
 	description: 'ball',
 	execute(client, message, args) {
         let embed = new MessageEmbed
