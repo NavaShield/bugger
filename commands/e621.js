@@ -8,10 +8,7 @@ module.exports = {
         Booru.search('e621', [`${args[0]}`], { limit: 1, random: true })
         .then(posts => {
           for (let post of posts)
-          var embed = new MessageEmbed() 
-          .setTitle(`${args[0]}`)
-          .setImage(post.fileUrl)
-          message.channel.send(embed)
+          message.channel.send(post.fileUrl)
         })
 	},
 };
