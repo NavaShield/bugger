@@ -8,7 +8,6 @@ const nekoclient = require('nekos.life');
 const neko = new nekoclient();
 const { exec } = require('child_process');
 const { config, execArgv } = require('process');
-const { execute } = require('./commands/execute');
 const http = require('http')
 disbut(client);
 
