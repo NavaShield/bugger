@@ -4,7 +4,7 @@ module.exports = {
 	name: 'nhelp',
 	description: 'ball',
 	execute(client, message, args) {
-        let embed = new MessageEmbed
+    let embed = new MessageEmbed
         .setTitle("NSFW HELP")
         .setDescription(`!e621\n
         !r34\n
@@ -13,6 +13,6 @@ module.exports = {
         .setFooter(`!e621 is furry\n
         !r34 and !xb is rule34\n
         !realb is real life`)
-        message.channel.send(embed)
+    message.channel.send(embed)
 	},
 };
