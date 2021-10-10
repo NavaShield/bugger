@@ -16,7 +16,7 @@ client.events = new discord.Collection();
 
 ['command_handler', 'event_handler'].forEach(handler => {
     require(`./handlers/${handler}`)(client, discord);
-}
+})
 
 client.on('ready', () => {
     var http = require("http");
