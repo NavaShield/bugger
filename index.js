@@ -45,35 +45,8 @@ client.on("message", message => {
 	  client.commands.get(command).execute(client, message, args);
 })
 
-client.on('ready', () => {
-    client.users.cache.get("277434964918796288").send(`Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`)
-})
-
-client.on('clickButton', async (button) => {
-    if(button.id === "BUtton1") {
-        await button.reply.send('only you can see this lolol', true)
-        button.channel.send(`you successfully pressed button jej`)
-    }
-});
-
-client.on('message', message => {
-    try {
-    if (message.author.bot) return;
-    if (message.channel.type === 'dm') {
-        const balls = message.content.slice(0).trim();
-        let id = message.author.id
-        var bals = client.users.cache.get(`${id}`);
-        let embed = new discord.MessageEmbed()
-    .setTitle("Recieved DM")
-    .setDescription(balls)
-    .setFooter(`DM From: ` + bals.tag)
-        client.channels.cache.get('879775180543627294').send(embed)
-    } else {
-        return;
-    }
-} catch (error) {
-    message.channel.send(`something broke because me bad coder lololol anyway here is error lolol \u0060\u0060\u0060${error}\u0060\u0060\u0060`)
-}
+client.on("message", message => {
+    console.log(message.guild.id)
 })
 
 client.login(SUSSYSTARTUP)
