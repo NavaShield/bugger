@@ -46,7 +46,7 @@ client.on("message", message => {
 })
 
 client.on("message", message => {
-    const arguments = message.content.slice(0).split(/ +/);
+    const arguments = message.content.slice().split(/ +/);
     const lowercock = arguments.toLowerCase();
     console.log(lowercock)
 })
