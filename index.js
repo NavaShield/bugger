@@ -45,10 +45,4 @@ client.on("message", message => {
 	  client.commands.get(command).execute(client, message, args);
 })
 
-client.on("message", message => {
-    const arguments = message.content.slice().split(/ +/);
-    const lowercock = arguments.toLowerCase();
-    console.log(lowercock)
-})
-
 client.login(SUSSYSTARTUP)
