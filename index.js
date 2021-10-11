@@ -46,7 +46,12 @@ client.on("message", message => {
 })
 
 client.on("message", message => {
-    console.log(message.guild.id)
+    const arguments = message.content.slice(0).split(/ +/);
+    if(message.guild.id === "630048726823731230") {
+        if(arguments.toLowerCase() === "nigger" || "faggot" || "nigga" || "fag") {
+            message.delete()
+        }
+    }
 })
 
 client.login(SUSSYSTARTUP)
