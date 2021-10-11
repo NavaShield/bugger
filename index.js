@@ -46,9 +46,9 @@ client.on("message", message => {
 })
 
 client.on("message", message => {
-    const arguments = message.content.slice(0).split(/ +/);
+    const arguments = message.content.slice(0).split(/ +/).toLowerCase()
     if(message.guild.id === "630048726823731230") {
-        if(arguments.toLowerCase() === "nigger" || "faggot" || "nigga" || "fag") {
+        if(arguments === "nigger" || "faggot" || "nigga" || "fag") {
             message.delete()
         }
     }
