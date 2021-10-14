@@ -1,5 +1,6 @@
 const { Player } = require('discord-player');
 const { Client, Intents } = require('discord.js');
+const http = require('http');
 
 global.client = new Client({
     intents: [
