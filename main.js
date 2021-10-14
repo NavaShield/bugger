@@ -11,6 +11,22 @@ global.client = new Client({
     disableMentions: 'everyone',
 });
 
+client.on('ready', () => {
+    var http = require("http");
+setInterval(function() {
+    http.get("http://iforgor.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
+})
+
+client.on("ready", ready => {
+    const server = http.createServer((req, res) => {
+        res.writeHead(200, { 'content-type': 'text/html' })
+        fs.createReadStream('index.html').pipe(res)
+      })
+      
+      server.listen(process.env.PORT || 3000)
+})
+
 client.config = require('./config');
 
 global.player = new Player(client, client.config.opt.discordPlayer);
