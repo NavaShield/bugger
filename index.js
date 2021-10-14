@@ -45,4 +45,21 @@ client.on("message", message => {
 	  client.commands.get(command).execute(client, message, args);
 })
 
+client.on("message", message => {
+    const args = message.content.slice(0)
+    if(message.author.bot) return;
+    if(message.channel.id === "630049627844116483"){
+    message.delete()
+    let embed = new discord.MessageEmbed()
+			.addFields(
+				{ name: `Submitter`, value: `${message.member.user.tag}`},
+                { name: `Suggestion`, value: `${args}`}
+			)
+            .setThumbnail(message.author.avatarURL())
+            .setFooter(message.member.user.tag, message.author.avatarURL())
+			.setColor("RANDOM")
+			message.channel.send(embed)
+            }else{return;}
+})
+
 client.login(SUSSYSTARTUP)
