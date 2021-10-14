@@ -59,6 +59,12 @@ client.on("message", message => {
             .setFooter(message.member.user.tag, message.author.avatarURL())
 			.setColor("RANDOM")
 			message.channel.send(embed)
+            .then(function (message) {
+                message.react("👍")
+                message.react("👎")
+              }).catch(function() {
+                //Something
+               });
             }else{return;}
 })
 
