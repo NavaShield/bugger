@@ -1,7 +1,7 @@
 const fs = require('fs');
-const discord = require('discord.js'); //Define the discord.js module
-const client = new discord.Client(); //Creating discord.js client (constructor)
-client.commands = new discord.Collection(); //bro i dont know
+const Discord = require('discord.js'); //Define the discord.js module
+const client = new Discord.Client(); //Creating discord.js client (constructor)
+client.commands = new Discord.Collection(); //bro i dont know
 const { prefix, SUSSYSTARTUP, blacklisted } = require("./config.json"); //Token and other configs
 const disbut = require('discord-buttons');
 const nekoclient = require('nekos.life');
@@ -12,11 +12,11 @@ const http = require('http')
 const communist = "406618810762657794"
 disbut(client);
 
-client.commands = new discord.Collection();
-client.events = new discord.Collection();
+client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
 
 ['command_handler', 'event_handler'].forEach(handler => {
-    require(`./handlers/${handler}`)(client, discord);
+    require(`./handlers/${handler}`)(client, Discord);
 })
 
 client.on('ready', () => {
