@@ -51,7 +51,25 @@ client.on("message", message => {
     if(message.author.bot) return;
     if(message.channel.id === "630049627844116483"){
     message.delete()
-    let embed = new Discord.MessageEmbed()
+    if (message.embeds.length < 0) {
+        let embed = new Discord.MessageEmbed()
+			.addFields(
+				{ name: `Submitter`, value: `${message.member.user.tag}`},
+                { name: `Suggestion`, value: `${args}`}
+			)
+            .setThumbnail(message.author.avatarURL())
+            .setFooter(message.member.user.tag, message.author.avatarURL())
+            .setImage(message.attachments.first().url)
+			.setColor("RANDOM")
+			message.channel.send(embed)
+            .then(function (message) {
+                message.react("👍")
+                message.react("👎")
+              }).catch(function() {
+                //Something
+               });
+    }else{
+        let embed = new Discord.MessageEmbed()
 			.addFields(
 				{ name: `Submitter`, value: `${message.member.user.tag}`},
                 { name: `Suggestion`, value: `${args}`}
@@ -66,8 +84,8 @@ client.on("message", message => {
               }).catch(function() {
                 //Something
                });
-            }else{return;}
-})
+    }
+}})
 
 client.on('message', message => {
     if(message.content === "prefer") {
