@@ -81,7 +81,7 @@ client.on('guildMemberAdd', async member => {
 
     let loggingChannel = member.guild.channels.cache.find(channel => channel.name === 'logs')
     if (!loggingChannel) return;
-    let JLChannel = member.guild.channels.cache.find(channel => channel.name === 'joins-and-leaves')
+    let JLChannel = member.guild.channels.cache.find(channel => channel.name === '👋│joins-quits')
     if (!JLChannel) return;
     //logging
     const created = new Intl.DateTimeFormat('en-GB').format(member.user.createdAt);
