@@ -51,7 +51,7 @@ client.on("message", message => {
     if(message.author.bot) return;
     if(message.channel.id === "630049627844116483"){
     message.delete()
-    let embed = new discord.MessageEmbed()
+    let embed = new Discord.MessageEmbed()
 			.addFields(
 				{ name: `Submitter`, value: `${message.member.user.tag}`},
                 { name: `Suggestion`, value: `${args}`}
