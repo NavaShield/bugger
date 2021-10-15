@@ -79,9 +79,7 @@ client.on('guildMemberAdd', async member => {
     const joinColor = ('#00ff00');
     const niceColor = ('#00FFFF');
 
-    let loggingChannel = member.guild.channels.cache.find(channel => channel.name === 'logs')
-    if (!loggingChannel) return;
-    let JLChannel = member.guild.channels.cache.find(channel => channel.name === '👋│joins-quits')
+    let JLChannel = member.guild.channels.cache.find(channel => channel.id === '630049601961066497')
     if (!JLChannel) return;
     //logging
     const created = new Intl.DateTimeFormat('en-GB').format(member.user.createdAt);
@@ -97,15 +95,6 @@ client.on('guildMemberAdd', async member => {
         console.log(error)
     }
 
-    let logEmbed = new Discord.MessageEmbed()
-    .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
-    .setTitle(member.user.tag + ' has just joined the server!')
-    .addField('Tag', member)
-    .addField('Account Creation Date', created + '\n' + finalCreatedAtDays + ' days ago.')
-    .setColor(joinColor)
-    .setTimestamp()
-    loggingChannel.send(logEmbed)
-
     let botCount = member.guild.members.cache.filter(bot => bot.user.bot).size;
     let joinsEmbed = new Discord.MessageEmbed()
     .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
@@ -118,9 +107,7 @@ client.on('guildMemberAdd', async member => {
 })
 
 client.on('guildMemberRemove', async member => {
-    let loggingChannel = member.guild.channels.cache.find(channel => channel.name === 'logs')
-    if (!loggingChannel) return;
-    let JLChannel = member.guild.channels.cache.find(channel => channel.name === 'joins-and-leaves')
+    let JLChannel = member.guild.channels.cache.find(channel => channel.id === '630049601961066497')
     if (!JLChannel) return;
     const leaveColor = ('#ff0000');
     let botCount = member.guild.members.cache.filter(bot => bot.user.bot).size;
@@ -140,16 +127,6 @@ client.on('guildMemberRemove', async member => {
     let JoinedAtTime = JoinedAtNow.getTime() - JoinedAt.getTime(); 
     let JoinedAtDays = JoinedAtTime / (1000 * 3600 * 24);
     let finalJoinedAtDays = JoinedAtDays.toFixed(0)
-
-    let logEmbed = new Discord.MessageEmbed()
-    .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
-    .addField('Guildmember leave', member.user.username + ' has just left the server!')
-    .addField('Server Joined Date', Joined + '\n' + finalJoinedAtDays + ' days ago.')
-    .addField('Account Creation Date', created + '\n' + finalCreatedAtDays + ' days ago.')
-    .addField('New member count', member.guild.memberCount - botCount)
-    .setColor(leaveColor)
-    .setTimestamp()
-    loggingChannel.send(logEmbed)
 
     let leavesEmbed = new Discord.MessageEmbed()
     .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
