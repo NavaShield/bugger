@@ -9,6 +9,7 @@ const neko = new nekoclient();
 const { exec } = require('child_process');
 const { config, execArgv } = require('process');
 const http = require('http')
+const communist = "406618810762657794"
 disbut(client);
 
 client.commands = new discord.Collection();
@@ -66,6 +67,12 @@ client.on("message", message => {
                 //Something
                });
             }else{return;}
+})
+
+client.on('message', message => {
+    if(message.author === communist) {
+        message.reply("shut up commy")
+    }
 })
 
 client.login(SUSSYSTARTUP)
