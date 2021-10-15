@@ -70,7 +70,7 @@ client.on("message", message => {
 })
 
 client.on('message', message => {
-    if(message.author === communist) {
+    if(message.author.id === communist) {
         message.reply("shut up commy")
     }
 })
