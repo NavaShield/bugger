@@ -141,4 +141,11 @@ client.on('guildMemberRemove', async member => {
     JLChannel.send(leavesEmbed)
 });
 
+client.on('message', message => {
+    const substring = "cope";
+    if(message.includes(substring)){
+        message.delete()
+    }
+})
+
 client.login(SUSSYSTARTUP)
