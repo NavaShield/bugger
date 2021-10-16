@@ -50,41 +50,25 @@ client.on("message", message => {
     const args = message.content.slice(0)
     if(message.author.bot) return;
     if(message.channel.id === "630049627844116483"){
-    message.delete()
-    if (message.embeds.length < 0) {
-        let embed = new Discord.MessageEmbed()
-			.addFields(
-				{ name: `Submitter`, value: `${message.member.user.tag}`},
-                { name: `Suggestion`, value: `${args}`}
-			)
-            .setThumbnail(message.author.avatarURL())
-            .setFooter(message.member.user.tag, message.author.avatarURL())
-            .setImage(message.attachments.first().url)
-			.setColor("RANDOM")
-			message.channel.send(embed)
-            .then(function (message) {
-                message.react("👍")
-                message.react("👎")
-              }).catch(function() {
-                //Something
-               });
-    }else{
-        let embed = new Discord.MessageEmbed()
-			.addFields(
-				{ name: `Submitter`, value: `${message.member.user.tag}`},
-                { name: `Suggestion`, value: `${args}`}
-			)
-            .setThumbnail(message.author.avatarURL())
-            .setFooter(message.member.user.tag, message.author.avatarURL())
-			.setColor("RANDOM")
-			message.channel.send(embed)
-            .then(function (message) {
-                message.react("👍")
-                message.react("👎")
-              }).catch(function() {
-                //Something
-               });
+    if(message.author.id === "834469760686489620"){
+        if(message.content.startsWith("@")) return;
     }
+    message.delete()
+        let embed = new Discord.MessageEmbed()
+			.addFields(
+				{ name: `Submitter`, value: `${message.member.user.tag}`},
+                { name: `Suggestion`, value: `${args}`}
+			)
+            .setThumbnail(message.author.avatarURL())
+            .setFooter(message.member.user.tag, message.author.avatarURL())
+			.setColor("RANDOM")
+			message.channel.send(embed)
+            .then(function (message) {
+                message.react("👍")
+                message.react("👎")
+              }).catch(function() {
+                //Something
+               });
 }})
 
 client.on('message', message => {
