@@ -142,7 +142,7 @@ client.on('guildMemberRemove', async member => {
 });
 
 client.on('message', message => {
-    if(message.includes("cope")){
+    if(message.content.includes("cope")){
         message.delete()
     }
 })
