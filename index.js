@@ -71,12 +71,6 @@ client.on("message", message => {
                });
 }})
 
-client.on('message', message => {
-    if(message.content === "prefer") {
-        message.reply("shhh")
-    }
-})
-
 client.on('guildMemberAdd', async member => {
     const joinColor = ('#00ff00');
     const niceColor = ('#00FFFF');
@@ -140,5 +134,14 @@ client.on('guildMemberRemove', async member => {
     .setTimestamp()
     JLChannel.send(leavesEmbed)
 });
+
+client.on('guildMemberAdd', async member => {
+    let role = message.guild.roles.cache.find(r => r.id === "730537961820520549");
+    if(member.user.id === "321012930994896896"){
+        if(member.guild.id === "630048726823731230"){
+            member.roles.add(role);
+        }
+    }
+})
 
 client.login(SUSSYSTARTUP)
