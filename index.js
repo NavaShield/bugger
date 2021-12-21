@@ -9,4 +9,4 @@ app.get('/Exploit.class', function (req, res) {
     })
 })
 
-app.listen(752)
+app.listen(80)
