@@ -60,6 +60,14 @@ client.login(AuthenticationToken)
     return process.exit();
   });
 
+// keep bot on life support
+client.on('ready', () => {
+   var http = require("http");
+    setInterval(function() {
+      http.get("http://iforgor.herokuapp.com");
+    }, 300000); // every 5 minutes (300000)
+})
+
 // Handle errors:
 process.on('unhandledRejection', async (err, promise) => {
   console.error(`[ANTI-CRASH] Unhandled Rejection: ${err}`.red);
