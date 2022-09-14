@@ -1,6 +1,7 @@
 const { Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
 const config = require('./config/config');
 const colors = require("colors");
+const http = require("http");
 
 // Creating a new client:
 const client = new Client({
@@ -62,10 +63,17 @@ client.login(AuthenticationToken)
 
 // keep bot on life support
 client.on('ready', () => {
-   var http = require("http");
     setInterval(function() {
       http.get("http://iforgor.herokuapp.com");
     }, 300000); // every 5 minutes (300000)
+})
+
+client.on("ready", ready => {
+    const server = http.createServer((req, res) => {
+        res.writeHead(200, { 'content-type': 'text/html' })
+        fs.createReadStream('index.html').pipe(res)
+      })
+      server.listen(process.env.PORT || 3000)
 })
 
 // Handle errors:
