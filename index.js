@@ -1,6 +1,7 @@
 const { Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
 const config = require('./config/config');
 const colors = require("colors");
+const fs = require("fs");
 const http = require("http");
 
 // Creating a new client:
