@@ -12,7 +12,9 @@ module.exports = {
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
+                    .setTitle('Gay Rate')
                     .setDescription(`You are ${Math.floor(Math.random() * 100) + 1}% gay :rainbow_flag:`)
+                    .setFooter({ text: `Requested by ${message.user.tag}`});
                     .setColor(0x08FCFC)
             ],
             ephemeral: false
