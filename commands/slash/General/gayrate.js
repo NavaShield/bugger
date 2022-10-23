@@ -14,7 +14,7 @@ module.exports = {
                 new EmbedBuilder()
                     .setTitle('Gay Rate')
                     .setDescription(`You are ${Math.floor(Math.random() * 100) + 1}% gay :rainbow_flag:`)
-                    .setFooter({ text: `Requested by ${message.user.tag}`})
+                    .setFooter({ text: `Requested by ${interaction.user.tag}`})
                     .setColor(0x08FCFC)
             ],
             ephemeral: false
