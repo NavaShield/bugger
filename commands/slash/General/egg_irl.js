@@ -9,11 +9,13 @@ module.exports = {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
     run: async (client, interaction, config, db) => {
+        const response = await fetch('https://www.reddit.com/r/egg_irl/random.json');
+        const data = await response.json();
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
                     .setTitle("🥚egg_irl🥚")
-                    const fetch=(...t)=>import("node-fetch").then(({default:n})=>n(...t));function randomEgg(){return fetch("https://www.reddit.com/r/egg_irl/random.json").then(t=>t.json()).then(t=>t[0].data.children[0].data.url)}randomEgg().then(t=>.setImage(t));
+                    .setImage(`${data[0].data.children[0].data.url}`)
             ],
             ephemeral: true
         })
