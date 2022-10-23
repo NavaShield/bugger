@@ -12,8 +12,8 @@ module.exports = {
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setDescription(`You are ${Math.floor(Math.random() * 100) + 1}% gay :rainbow_flag:`)
-                    .setColor('Blue')
+                    .setDescription(`You are ${Math.floor(Math.random() * 100) + 1}% gay :rainbow_flag:`);
+                    .setColor(0x08FCFC);
             ],
             ephemeral: false
         })
