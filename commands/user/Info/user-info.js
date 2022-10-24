@@ -67,7 +67,7 @@ module.exports = {
                         )
                         .setColor('Blue')
                 ],
-                ephemeral: true
+                ephemeral: false
             }
         );
 
