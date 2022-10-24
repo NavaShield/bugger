@@ -14,7 +14,7 @@ module.exports = {
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setTitle(`Random ${data.name} Image`)
+                    .setTitle(`${data.name}`)
                     .setImage(`${data.image_link}`)
             ],
             ephemeral: false
