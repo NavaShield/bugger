@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
-// adding comment so it builds again
+
 module.exports = {
     name: "cat",
     description: "cat (not to be confused with kat)",
