@@ -17,7 +17,7 @@ module.exports = {
                     .setTitle("🥚egg_irl🥚")
                     .setImage(`${data[0].data.children[0].data.url}`)
             ],
-            ephemeral: true
+            ephemeral: false
         })
     },
 };
