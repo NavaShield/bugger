@@ -19,7 +19,7 @@ module.exports = {
                             }
                         ))
                 ],
-                ephemeral: true
+                ephemeral: false
             }
         );
 
