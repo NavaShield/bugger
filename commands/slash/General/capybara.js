@@ -10,16 +10,12 @@ module.exports = {
     },
     run: async (client, interaction, config, db) => {
         const response = await fetch('https://api.capybara-api.xyz/v1/image/random');
-        const data = await response.json();
-        const fact1 = await fetch('https://api.capybara-api.xyz/v1/facts/random');
-        const fact = await fact1.json();
-        
+        const data = await response.json();        
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
                     .setTitle("Random Capybara Image")
                     .setImage(`${data.image_urls.original}`)
-                    .setFooter(`${fact.fact}`)
             ],
             ephemeral: false
         })
