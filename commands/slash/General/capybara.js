@@ -1,8 +1,8 @@
 const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
-    name: "cat",
-    description: "cat (not to be confused with kat)",
+    name: "capybara",
+    description: "capybara image",
     type: 1,
     options: [],
     permissions: {
