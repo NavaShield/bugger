@@ -14,8 +14,8 @@ module.exports = {
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setTitle("Random Capybara Image")
-                    .setDescription(`${data.image_urls.original}`)
+                    .setTitle("Random Capybara Fact")
+                    .setDescription(`${data.fact}`)
             ],
             ephemeral: false
         })
