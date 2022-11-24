@@ -5,6 +5,16 @@ module.exports = {
     description: "test",
     type: 1,
     options: [],
+    choices: [
+        {
+           name: "Choice 1",
+           value: "choice_1"
+        },
+        {
+           name: "Choice 2",
+           value: "choice_2"
+        },
+     ],
     permissions: {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
