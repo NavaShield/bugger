@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require("discord.js");
 module.exports = {
     name: "nsfw",
     description: "test",
-    type: 1,
+    type: 3,
     options: [],
     choices: [
         {
