@@ -1,8 +1,8 @@
 const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
-    name: "cat",
-    description: "cat (not to be confused with kat)",
+    name: "nsfw",
+    description: "test",
     type: 1,
     options: [],
     permissions: {
