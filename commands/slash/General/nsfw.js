@@ -4,17 +4,14 @@ module.exports = {
     name: "nsfw",
     description: "test",
     type: 2,
-    options: [],
-    choices: [
+    options: [
         {
-           name: "Choice 1",
-           value: "choice_1"
-        },
-        {
-           name: "Choice 2",
-           value: "choice_2"
-        },
-     ],
+            name: "text",
+            description: "write anything you want!",
+            type: 3,
+            required: false
+        }
+    ],
     permissions: {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
