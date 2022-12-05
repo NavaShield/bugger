@@ -31,7 +31,7 @@ const client = new Client({
 });
 
 // Host the bot:
-require('http').createServer((req, res) => res.end('Ready.')).listen(3000);
+// require('http').createServer((req, res) => res.end('Ready.')).listen(3000);
 
 // Getting the bot token:
 const AuthenticationToken = process.env.TOKEN || config.Client.TOKEN;
@@ -63,19 +63,19 @@ client.login(AuthenticationToken)
   });
 
 // keep bot on life support
-client.on('ready', () => {
-    setInterval(function() {
-      http.get("http://iforgor.herokuapp.com");
-    }, 300000); // every 5 minutes (300000)
-})
+// client.on('ready', () => {
+//     setInterval(function() {
+//       http.get("http://iforgor.herokuapp.com");
+//     }, 300000); // every 5 minutes (300000)
+// })
 
-client.on("ready", ready => {
-    const server = http.createServer((req, res) => {
-        res.writeHead(200, { 'content-type': 'text/html' })
-        fs.createReadStream('index.html').pipe(res)
-      })
-      server.listen(process.env.PORT || 3000)
-})
+// client.on("ready", ready => {
+//     const server = http.createServer((req, res) => {
+//         res.writeHead(200, { 'content-type': 'text/html' })
+//         fs.createReadStream('index.html').pipe(res)
+//       })
+//       server.listen(process.env.PORT || 3000)
+// })
 
 // Handle errors:
 process.on('unhandledRejection', async (err, promise) => {
