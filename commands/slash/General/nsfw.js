@@ -2,8 +2,8 @@ const { EmbedBuilder, SlashCommandBuilder } = require("discord.js");
 const pornpic = require('porn-picture')
 
 module.exports = {
-    name: "test",
-    description: "test",
+    name: "nsfw",
+    description: "this command wont work in a non nsfw channel :pray:",
     type: 1,
     options: [
         // random
