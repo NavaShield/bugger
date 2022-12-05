@@ -13,8 +13,6 @@ module.exports = {
         // cosplay
         // pussy
         // catGirl
-        // rule34
-        // hentai
         {
           name: "pornography",
           description: "oh good lord!",
@@ -48,16 +46,7 @@ module.exports = {
             {
                 name: "catGirl",
                 value: "catGirl"
-            },
-            {
-                name: "rule34",
-                value: "rule34"
-            },
-            {
-                name: "hentai",
-                value: "hentai"
-            },
-            
+            }            
           ]
       }
   ],
@@ -67,10 +56,11 @@ module.exports = {
     run: async (client, interaction, config, db) => {
         if(!interaction.channel.nsfw) return interaction.reply({embeds:[new EmbedBuilder().setDescription("Please run this command in an nsfw channel. :pray:")],ephemeral:!1});
         const  thing = interaction.options.get('pornography').value;
+        console.log(pornpic.nsfw.thing)
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setDescription(`Choice: ${thing}`)
+                    .setDescription(`pornpic.hentai${thing}`)
             ],
             ephemeral: false
         })
