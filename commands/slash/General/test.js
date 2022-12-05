@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
-    name: "nsfw",
+    name: "test",
     description: "test",
     type: 1,
     options: [
@@ -16,7 +16,7 @@ module.exports = {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
     run: async (client, interaction, config, db) => {
-        const thing = interaction.options.getSubcommand();
+        const  thing = interaction.options.get('text').value;
         console.log(thing)
     },
 };
