@@ -32,7 +32,7 @@ module.exports = {
                 new EmbedBuilder()
                     .setDescription(thing)
             ],
-            ephemeral: true
+            ephemeral: false
         })
     },
 };
