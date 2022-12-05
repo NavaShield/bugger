@@ -13,11 +13,11 @@ module.exports = {
           choices: [
               {
                   name: "Choice #1",
-                  value: "1"
+                  value: "Choice1"
               },
               {
                   name: "Choice #2",
-                  value: "2"
+                  value: "Choice2"
               }
           ]
       }
