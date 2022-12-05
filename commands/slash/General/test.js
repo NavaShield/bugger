@@ -1,4 +1,5 @@
 const { EmbedBuilder, SlashCommandBuilder } = require("discord.js");
+const pornpic = require('porn-picture')
 
 module.exports = {
     name: "test",
