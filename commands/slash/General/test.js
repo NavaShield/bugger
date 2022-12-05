@@ -56,11 +56,11 @@ module.exports = {
     run: async (client, interaction, config, db) => {
         if(!interaction.channel.nsfw) return interaction.reply({embeds:[new EmbedBuilder().setDescription("Please run this command in an nsfw channel. :pray:")],ephemeral:!1});
         const  thing = interaction.options.get('pornography').value;
-        console.log(pornpic.nsfw.thing)
+        console.log(pornpic.nsfw[thing]())
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setDescription(`pornpic.hentai${thing}`)
+                    .setDescription(`Option: ${thing}`)
             ],
             ephemeral: false
         })
