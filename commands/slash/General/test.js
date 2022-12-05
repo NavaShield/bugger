@@ -69,7 +69,7 @@ module.exports = {
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setDescription(thing)
+                    .setDescription(`Option: ${thing}\nNSFW Channel: ${interaction.channel.nsfw}`)
             ],
             ephemeral: false
         })
