@@ -9,7 +9,7 @@ module.exports = {
             name: "text",
             description: "write anything you want!",
             type: 3,
-            required: false
+            required: true
         }
     ],
     permissions: {
@@ -17,6 +17,12 @@ module.exports = {
     },
     run: async (client, interaction, config, db) => {
         const  thing = interaction.options.get('text').value;
-        console.log(thing)
+        return interaction.reply({
+            embeds: [
+                new EmbedBuilder()
+                    .setDescription(thing)
+            ],
+            ephemeral: true
+        })
     },
 };
