@@ -65,11 +65,12 @@ module.exports = {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
     run: async (client, interaction, config, db) => {
+        if(!interaction.channel.nsfw) return interaction.reply({embeds:[new EmbedBuilder().setDescription("Please run this command in an nsfw channel. :pray:")],ephemeral:!1});
         const  thing = interaction.options.get('pornography').value;
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setDescription(`Option: ${thing}\nNSFW Channel: ${interaction.channel.nsfw}`)
+                    .setDescription(`Choice: ${thing}`)
             ],
             ephemeral: false
         })
