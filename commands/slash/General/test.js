@@ -6,17 +6,27 @@ module.exports = {
     type: 1,
     options: [
         {
-            name: "text",
-            description: "write anything you want!",
-            type: 3,
-            required: true
-        }
-    ],
+          name: "choice",
+          description: "Choose something!",
+          type: 3,
+          required: true,
+          choices: [
+              {
+                  name: "Choice #1",
+                  value: "1"
+              },
+              {
+                  name: "Choice #2",
+                  value: "2"
+              }
+          ]
+      }
+  ],
     permissions: {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
     run: async (client, interaction, config, db) => {
-        const  thing = interaction.options.get('text').value;
+        const  thing = interaction.options.get('choice').value;
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
