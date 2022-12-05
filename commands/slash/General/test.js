@@ -61,7 +61,7 @@ module.exports = {
             embeds: [
                 new EmbedBuilder()
                     .setImage(img)
-                    .setFooter(`Requested by ${interaction.user.tag}`)
+                    .setFooter({ text: `Requested by ${interaction.user.tag}`})
             ],
             ephemeral: false
         })
