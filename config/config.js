@@ -1,4 +1,3 @@
-var secretconfig = require('../../secretconfig.json')
 module.exports = {
 
   Prefix: "%", // YOUR BOT PREFIX.
@@ -12,7 +11,7 @@ module.exports = {
   },
 
   Client: {
-    TOKEN: secretconfig.token, // YOUR BOT TOKEN. (USE THIS ONLY IN VSCODE)
+    TOKEN: process.env.token, // YOUR BOT TOKEN. (USE THIS ONLY IN VSCODE)
     ID: "1018485349602820136" // YOUR BOT ID.
   }
 
