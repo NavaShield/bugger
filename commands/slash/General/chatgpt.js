@@ -16,6 +16,14 @@ module.exports = {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
     run: async (client, interaction, config, db) => {
+        if(interaction.options.get('input') === null) interaction.reply({embeds: [
+            new EmbedBuilder()
+            .setTitle('Error')
+            .setDescription('You did not provide a question. Please try again with a question attached.')
+            .setColor('Red')
+        ],
+        ephemeral: true 
+    });
         interaction.reply({
             embeds: [
                 new EmbedBuilder()
