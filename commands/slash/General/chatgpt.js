@@ -7,7 +7,7 @@ module.exports = {
     description: "ai and stuff",
     type: 1,
     options: [{
-        name: "input",
+        name: "prompt",
         description: "write anything you want!",
         type: 3,
         required: true
@@ -16,7 +16,7 @@ module.exports = {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
     run: async (client, interaction, config, db) => {
-        if(interaction.options.get('input') === null) interaction.reply({embeds: [
+        if(interaction.options.get('prompt') === null) interaction.reply({embeds: [
             new EmbedBuilder()
             .setTitle('Error')
             .setDescription('You did not provide a question. Please try again with a question attached.')
@@ -30,7 +30,7 @@ module.exports = {
                 .setTitle('ChatGPT')
                 .setDescription('Please wait..')
                 .setFooter({
-                    text: `Your question was: ${interaction.options.get('input').value}`
+                    text: `Your question was: ${interaction.options.get('prompt').value}`
                 })
                 .setColor('Yellow')
             ],
@@ -42,10 +42,10 @@ module.exports = {
             apiKey: process.env.apikey
         })
         client.gpt = api;
-        const res = await api.sendMessage(interaction.options.get('input').value, {
+        const res = await api.sendMessage(interaction.options.get('prompt').value, {
             onProgress: (partialResponse) => interaction.editReply({
                 embeds: [new EmbedBuilder().setTitle("ChatGPT").setDescription(partialResponse.text).setFooter({
-                    text: `Your question was: '${interaction.options.get("input").value}'`
+                    text: `Your question was: '${interaction.options.get("prompt").value}'`
                 }).setColor("Green")]
             })
         })
@@ -55,7 +55,7 @@ module.exports = {
                 .setTitle('ChatGPT')
                 .setDescription(res.text)
                 .setFooter({
-                    text: `Your question was: '${interaction.options.get('input').value}'\nConversation ID: ${res.conversationId}`
+                    text: `Your question was: '${interaction.options.get('prompt').value}'\nConversation ID: ${res.conversationId}`
                 })
                 .setColor('Green')
             ],
